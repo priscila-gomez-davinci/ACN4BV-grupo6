@@ -24,6 +24,33 @@ namespace FashionForward
             this.Hide(); //Oculta el formulario actual (opcional)
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            openFileDialog1.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog1.Title = "Selecciona una imagen";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add("XS");
+            comboBox1.Items.Add("S");
+            comboBox1.Items.Add("M");
+            comboBox1.Items.Add("L");
+            comboBox1.Items.Add("XL");
+            comboBox1.Items.Add("XXL");
+            comboBox1.Items.Add("XXXL");
+
+            comboBox2.Items.Add("Woman");
+            comboBox2.Items.Add("Man");
+            comboBox2.Items.Add("Kids");
+            comboBox2.Items.Add("Teenager");
+        }
     }
 }
