@@ -1,0 +1,13 @@
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\bin\Debug\FashionForward.exe.config
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\bin\Debug\FashionForward.exe
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\bin\Debug\FashionForward.pdb
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.AssemblyReference.cache
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.SuggestedBindingRedirects.cache
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.Form1.resources
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.Form2.resources
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.Form3.resources
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.Properties.Resources.resources
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.GenerateResource.cache
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.CoreCompileInputs.cache
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.exe
+F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.pdb
