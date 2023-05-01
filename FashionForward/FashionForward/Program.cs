@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FashionForward.Controladores;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +18,30 @@ namespace FashionForward
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            DbController.initialize();
+
+            if (validateConnection())
+            {
+                Trace.WriteLine("Conexion a la base de datos establecida con exito");
+            }
+            Application.Run(FormController.Form1);
+        }
+
+        public static bool validateConnection()
+        {
+            try
+            {
+                DbController.connection.Open();
+                DbController.connection.Close();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine("Error al conectar a la base de datos: " + ex.Message);
+                return false;
+            }
         }
     }
 }

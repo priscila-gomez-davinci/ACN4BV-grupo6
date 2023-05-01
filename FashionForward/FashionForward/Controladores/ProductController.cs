@@ -19,15 +19,15 @@ namespace FashionForward.Controladores
             //Dar de alta en la base de datos el producto
             String query = "insert into dbo.product values" +
                "(@id, " +
-               "(@name, " +
-               "(@image, " +
-               "(@description, " +
-               "(@stock, " +
-               "(@price, " +
-               "(@color, " +
-               "(@size, " +
-               "(@categories, " +
-               "(@isActive, " +
+               "@name, " +
+               "@image, " +
+               "@description, " +
+               "@stock, " +
+               "@price, " +
+               "@color, " +
+               "@size, " +
+               "@category, " +
+               "@isActive " +
                ");";
 
 
@@ -40,7 +40,7 @@ namespace FashionForward.Controladores
             cmd.Parameters.AddWithValue("@price", product.price);
             cmd.Parameters.AddWithValue("@color", product.color);
             cmd.Parameters.AddWithValue("@size", product.size);
-            cmd.Parameters.AddWithValue("@categories", product.categories);
+            cmd.Parameters.AddWithValue("@category", product.category);
             cmd.Parameters.AddWithValue("@isActive", product.isActive);
 
 

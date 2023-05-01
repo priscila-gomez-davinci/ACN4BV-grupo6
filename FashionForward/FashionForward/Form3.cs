@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FashionForward.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,9 @@ namespace FashionForward
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 atras = new Form1(); //Crea una instancia del formulario de destino
-            atras.Show(); //Muestra el formulario de destino
             this.Hide(); //Oculta el formulario actual (opcional)
+            FormController.Form1.Show();
         }
+
     }
 }
