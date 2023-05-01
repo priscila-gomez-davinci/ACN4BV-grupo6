@@ -78,27 +78,16 @@ namespace FashionForward
             var talle = cb_talle.SelectedItem;
             var categoria = cb_categoria.SelectedItem;
 
-            Product prod = new Product(int.Parse(txt_id.Text), txt_nombre.Text, imageBytes, txt_descripcion.Text, int.Parse(txt_stock.Text), double.Parse(txt_id.Text), txt_color.Text, talle.ToString(), categoria.ToString(), true);
+            Product prod = new Product(int.Parse(txt_id.Text), txt_nombre.Text, imageBytes, txt_descripcion.Text, int.Parse(txt_stock.Text), decimal.Parse(txt_id.Text), txt_color.Text, talle.ToString(), categoria.ToString(), true);
 
             if (productController.crearProducto(prod))
             {
                 Trace.WriteLine("Producto Creado con exito");
+                showProducts();
             }
             else
             {
                 Trace.WriteLine("Fallo la creacion del producto");
-            }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
-            {
-                int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
-                ProductController.deleteProduct(id);
-                showProducts();
             }
         }
 
@@ -113,15 +102,27 @@ namespace FashionForward
 
                 dg_products.Rows[rowIndex].Cells[0].Value = prod.id.ToString();
                 dg_products.Rows[rowIndex].Cells[1].Value = prod.name.ToString();
-                dg_products.Rows[rowIndex].Cells[5].Value = prod.stock.ToString();
-                dg_products.Rows[rowIndex].Cells[6].Value = prod.price.ToString();
-                dg_products.Rows[rowIndex].Cells[7].Value = prod.color.ToString();
-                dg_products.Rows[rowIndex].Cells[8].Value = prod.size.ToString();
-                dg_products.Rows[rowIndex].Cells[9].Value = prod.category.ToString();
+                dg_products.Rows[rowIndex].Cells[2].Value = prod.stock.ToString();
+                dg_products.Rows[rowIndex].Cells[3].Value = prod.price.ToString();
+                dg_products.Rows[rowIndex].Cells[4].Value = prod.color.ToString();
+                dg_products.Rows[rowIndex].Cells[5].Value = prod.size.ToString();
+                dg_products.Rows[rowIndex].Cells[6].Value = prod.category.ToString();
 
 
-                dg_products.Rows[rowIndex].Cells[4].Value = new DataGridViewButtonCell();
+                dg_products.Rows[rowIndex].Cells[7].Value = new DataGridViewButtonCell();
 
+            }
+        }
+
+        private void dg_products_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
+                ProductController.deleteProduct(id);
+                showProducts();
             }
         }
     }

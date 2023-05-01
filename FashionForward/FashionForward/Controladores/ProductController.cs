@@ -85,7 +85,7 @@ namespace FashionForward.Controladores
         public static List<Product> getAll()
         {
             List<Product> list = new List<Product>();
-            string query = "select * from dbo.products;";
+            string query = "select * from dbo.products where isActive = 1;";
 
             SqlCommand cmd = new SqlCommand(query, DbController.connection);
 
@@ -101,19 +101,11 @@ namespace FashionForward.Controladores
                     reader.GetBytes(2, 0, bytes, 0, bytes.Length);
 
                     Product product = new Product(reader.GetInt32(0), reader.GetString(1), bytes, 
-                        reader.GetString(3), reader.GetInt32(4), reader.GetDouble(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), true);
+                        reader.GetString(3), reader.GetInt32(4), reader.GetDecimal(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetBoolean(9));
                     list.Add(product); 
                     Trace.WriteLine("Prod encontrado, nombre: " + reader.GetString(1));
 
                 }
-
-                /*
-                 int id, string name,
-            byte[] image,string descripcion, int stock, 
-            double price, string color, string size, 
-            string category, Boolean isActive
-                */
-
                 reader.Close();
                 DbController.connection.Close();
 

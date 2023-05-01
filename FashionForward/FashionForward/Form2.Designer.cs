@@ -46,6 +46,14 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_color = new System.Windows.Forms.TextBox();
             this.dg_products = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 399);
+            this.button1.Location = new System.Drawing.Point(12, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 39);
             this.button1.TabIndex = 0;
@@ -100,7 +108,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 27);
+            this.label4.Location = new System.Drawing.Point(271, 29);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(37, 13);
@@ -119,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(268, 94);
+            this.label6.Location = new System.Drawing.Point(269, 89);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 7;
@@ -199,11 +207,61 @@
             // dg_products
             // 
             this.dg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_products.Location = new System.Drawing.Point(29, 243);
+            this.dg_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Nombre,
+            this.Stock,
+            this.Precio,
+            this.Color,
+            this.Talle,
+            this.Categoria,
+            this.Acciones});
+            this.dg_products.Location = new System.Drawing.Point(12, 253);
             this.dg_products.Name = "dg_products";
-            this.dg_products.Size = new System.Drawing.Size(699, 150);
+            this.dg_products.Size = new System.Drawing.Size(845, 150);
             this.dg_products.TabIndex = 17;
-            this.dg_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dg_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_products_CellContentClick_1);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            // 
+            // Talle
+            // 
+            this.Talle.HeaderText = "Talle";
+            this.Talle.Name = "Talle";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Acciones
+            // 
+            this.Acciones.HeaderText = "Acciones";
+            this.Acciones.Name = "Acciones";
+            this.Acciones.Text = "Discontinuar";
             // 
             // btn_agregar
             // 
@@ -235,7 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(883, 495);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_agregar);
@@ -290,5 +348,13 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Color;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Talle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewButtonColumn Acciones;
     }
 }

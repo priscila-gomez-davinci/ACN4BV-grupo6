@@ -11,7 +11,7 @@ namespace FashionForward.Modelos
     {
         public Product(int id, string name,
             byte[] image,string descripcion, int stock, 
-            double price, string color, string size, 
+            decimal price, string color, string size, 
             string category, Boolean isActive ) 
         { 
             this.id = id;
@@ -25,6 +25,11 @@ namespace FashionForward.Modelos
             this.category = category;
             this.isActive = isActive;
 
+        }
+
+        public Product(int id)
+        {
+            this.id = id;
         }
         public Product()
         { 
@@ -62,7 +67,7 @@ namespace FashionForward.Modelos
         public byte[] image { get; set; }
         public string description { get; set; }
         public int stock { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
         public string color { get; set; }
         public string size { get; set; }
         public string category { get; set; }
