@@ -17,7 +17,7 @@ namespace FashionForward.Controladores
         public bool crearProducto(Product product) 
         {
             //Dar de alta en la base de datos el producto
-            String query = "insert into dbo.product values" +
+            String query = "insert into dbo.products values" +
                "(@id, " +
                "@name, " +
                "@image, " +
@@ -58,8 +58,23 @@ namespace FashionForward.Controladores
             }
         }
 
-        public bool EliminarProducto(string productid) {
-            return true;
+        public static bool deleteProduct(int productid) {
+            string query = "update dbo.products set isActive = 0 where id = @id;";
+
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+            cmd.Parameters.AddWithValue("@id", productid);
+
+            try
+            {
+                DbController.connection.Open();
+                cmd.ExecuteNonQuery();
+                DbController.connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
         }
 
         public bool EditarProducto(Product producto, int productId)
@@ -67,9 +82,47 @@ namespace FashionForward.Controladores
             return true;
         }
 
-        public List<Product> ObtenerTodos()
+        public static List<Product> getAll()
         {
-            List<Product> list = new List<Product>();   
+            List<Product> list = new List<Product>();
+            string query = "select * from dbo.products;";
+
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+
+            try
+            {
+                DbController.connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    // Lee los datos de la columna que contiene el array de bytes
+                    byte[] bytes = new byte[(reader.GetBytes(2, 0, null, 0, int.MaxValue))];
+                    reader.GetBytes(2, 0, bytes, 0, bytes.Length);
+
+                    Product product = new Product(reader.GetInt32(0), reader.GetString(1), bytes, 
+                        reader.GetString(3), reader.GetInt32(4), reader.GetDouble(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), true);
+                    list.Add(product); 
+                    Trace.WriteLine("Prod encontrado, nombre: " + reader.GetString(1));
+
+                }
+
+                /*
+                 int id, string name,
+            byte[] image,string descripcion, int stock, 
+            double price, string color, string size, 
+            string category, Boolean isActive
+                */
+
+                reader.Close();
+                DbController.connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
+
             return list;
         }
     }

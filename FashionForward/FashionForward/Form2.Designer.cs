@@ -45,12 +45,12 @@
             this.txt_stock = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_color = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dg_products = new System.Windows.Forms.DataGridView();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_products)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -196,13 +196,14 @@
             this.txt_color.Size = new System.Drawing.Size(121, 20);
             this.txt_color.TabIndex = 16;
             // 
-            // dataGridView1
+            // dg_products
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 243);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(699, 150);
-            this.dataGridView1.TabIndex = 17;
+            this.dg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_products.Location = new System.Drawing.Point(29, 243);
+            this.dg_products.Name = "dg_products";
+            this.dg_products.Size = new System.Drawing.Size(699, 150);
+            this.dg_products.TabIndex = 17;
+            this.dg_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_agregar
             // 
@@ -238,7 +239,7 @@
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_agregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dg_products);
             this.Controls.Add(this.txt_color);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.txt_stock);
@@ -260,7 +261,7 @@
             this.Text = "Agregar Producto";
             this.Load += new System.EventHandler(this.Form2_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_products)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,7 +286,7 @@
         private System.Windows.Forms.TextBox txt_stock;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.TextBox txt_color;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dg_products;
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label9;
