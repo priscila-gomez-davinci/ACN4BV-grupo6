@@ -11,3 +11,17 @@ F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grup
 F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.CoreCompileInputs.cache
 F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.exe
 F:\Apuntes de Da Vinci\1 Cuatrimestre 2023\Plataformas de desarrollo\ACN4BV-grupo6\FashionForward\FashionForward\obj\Debug\FashionForward.pdb
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Debug\FashionForward.exe.config
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Debug\FashionForward.exe
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Debug\FashionForward.pdb
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.AssemblyReference.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.Properties.Resources.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.GenerateResource.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.exe
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.pdb
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.AuthenticationForm.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.MainForm.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.ProductosForm.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Debug\FashionForward.VentasForm.resources

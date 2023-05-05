@@ -48,23 +48,29 @@
   <ItemGroup>
     <Compile Include="Controladores\DbController.cs" />
     <Compile Include="Controladores\ProductController.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ProductosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="ProductosForm.Designer.cs">
+      <DependentUpon>ProductosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="VentasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="VentasForm.Designer.cs">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AuthenticationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthenticationForm.Designer.cs">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Product.cs" />
     <Compile Include="Modelos\Shopping.cs" />
@@ -72,14 +78,17 @@
     <Compile Include="Modelos\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="ProductosForm.resx">
+      <DependentUpon>ProductosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="VentasForm.resx">
+      <DependentUpon>VentasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthenticationForm.resx">
+      <DependentUpon>AuthenticationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,6 +98,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +112,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-black-30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-lock-icon-30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fashion-icon-50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-profile-white-32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-profile-white-32px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

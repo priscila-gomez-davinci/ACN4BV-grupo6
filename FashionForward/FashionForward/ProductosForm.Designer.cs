@@ -1,6 +1,6 @@
 ﻿namespace FashionForward
 {
-    partial class Form2
+    partial class ProductosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -69,6 +69,7 @@
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nombre";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -76,6 +77,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -85,6 +87,7 @@
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripción";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -94,6 +97,7 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Stock";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -104,6 +108,7 @@
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Precio";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -113,6 +118,7 @@
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Color";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -122,6 +128,7 @@
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Talle";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -131,6 +138,7 @@
             this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Categoría";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox1
             // 
@@ -139,6 +147,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 145);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label8
             // 
@@ -148,6 +157,7 @@
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 10;
             this.label8.Text = "Imagen";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // comboBox1
             // 
@@ -156,6 +166,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -164,6 +175,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 12;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -171,6 +183,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 13;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -178,6 +191,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(121, 20);
             this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -185,6 +199,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 15;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -192,6 +207,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(121, 20);
             this.textBox5.TabIndex = 16;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // dataGridView1
             // 
@@ -200,6 +216,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(699, 150);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button2
             // 
@@ -209,8 +226,9 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Agregar producto";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form2
+            // ProductosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -234,7 +252,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "Form2";
+            this.Name = "ProductosForm";
             this.Text = "Agregar Producto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
