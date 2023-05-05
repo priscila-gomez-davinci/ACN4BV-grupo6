@@ -1,0 +1,14 @@
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Release\FashionForward.exe.config
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Release\FashionForward.exe
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\bin\Release\FashionForward.pdb
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.csproj.AssemblyReference.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.Form1.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.Form2.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.Form3.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.MainForm.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.Properties.Resources.resources
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.csproj.GenerateResource.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.exe
+C:\Users\Ruben\Source\Repos\fashion-forward-admin\FashionForward\FashionForward\obj\Release\FashionForward.pdb

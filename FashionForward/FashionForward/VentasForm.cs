@@ -10,20 +10,18 @@ using System.Windows.Forms;
 
 namespace FashionForward
 {
-    public partial class Form2 : Form
+    public partial class VentasForm : Form
     {
-        public Form2()
+        public VentasForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 atras = new Form1(); //Crea una instancia del formulario de destino
+            MainForm atras = new MainForm(); //Crea una instancia del formulario de destino
             atras.Show(); //Muestra el formulario de destino
             this.Hide(); //Oculta el formulario actual (opcional)
         }
-
-
     }
 }
