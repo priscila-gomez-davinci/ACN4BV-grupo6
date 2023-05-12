@@ -1,0 +1,7 @@
+
+*.vsidx
+FashionForward/.vs/FashionForward/v17/.wsuo
+*.json
+*.sqlite
+*.cs
+FashionForward/FashionForward/obj/Release/FashionForward.csproj.AssemblyReference.cache
