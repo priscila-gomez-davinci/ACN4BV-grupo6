@@ -14,20 +14,20 @@ namespace FashionForward.Controladores
 {
     public class ProductController
     {
-        public bool crearProducto(Product product) 
+        public bool crearProducto(Product product)
         {
             //Dar de alta en la base de datos el producto
-            String query = "insert into dbo.product values" +
+            String query = "insert into dbo.products values" +
                "(@id, " +
-               "(@name, " +
-               "(@image, " +
-               "(@description, " +
-               "(@stock, " +
-               "(@price, " +
-               "(@color, " +
-               "(@size, " +
-               "(@categories, " +
-               "(@isActive, " +
+               "@name, " +
+               "@image, " +
+               "@description, " +
+               "@stock, " +
+               "@price, " +
+               "@color, " +
+               "@size, " +
+               "@category, " +
+               "@isActive " +
                ");";
 
 
@@ -40,17 +40,17 @@ namespace FashionForward.Controladores
             cmd.Parameters.AddWithValue("@price", product.price);
             cmd.Parameters.AddWithValue("@color", product.color);
             cmd.Parameters.AddWithValue("@size", product.size);
-            cmd.Parameters.AddWithValue("@categories", product.categories);
+            cmd.Parameters.AddWithValue("@category", product.category);
             cmd.Parameters.AddWithValue("@isActive", product.isActive);
 
 
             try
-            { 
+            {
                 DbController.connection.Open();
                 cmd.ExecuteNonQuery();
                 DbController.connection.Close();
                 return true;
-            } 
+            }
             catch (Exception ex)
             {
                 throw new Exception("Hay un error en la query: " + ex.Message);
@@ -58,18 +58,91 @@ namespace FashionForward.Controladores
             }
         }
 
-        public bool EliminarProducto(string productid) {
-            return true;
+        public static bool deleteProduct(int productid)
+        {
+            string query = "update dbo.products set isActive = 0 where id = @id;";
+
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+            cmd.Parameters.AddWithValue("@id", productid);
+
+            try
+            {
+                DbController.connection.Open();
+                cmd.ExecuteNonQuery();
+                DbController.connection.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
         }
 
-        public bool EditarProducto(Product producto, int productId)
+        public bool EditarProducto(Product newProduct, int productId)
         {
-            return true;
+
+            string query = "update dbo.products set name = @name, image = @image, description = @description, stock = @stock, price = @price, color = @color, size = @size, category = @category, isActive = @isActive where id = @id;";
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+            cmd.Parameters.AddWithValue("@id", newProduct.id);
+            cmd.Parameters.AddWithValue("@name", newProduct.name);
+            cmd.Parameters.AddWithValue("@image", newProduct.image);
+            cmd.Parameters.AddWithValue("@description", newProduct.description);
+            cmd.Parameters.AddWithValue("@stock", newProduct.stock);
+            cmd.Parameters.AddWithValue("@price", newProduct.price);
+            cmd.Parameters.AddWithValue("@color", newProduct.color);
+            cmd.Parameters.AddWithValue("@size", newProduct.size);
+            cmd.Parameters.AddWithValue("@category", newProduct.category);
+            cmd.Parameters.AddWithValue("@isActive", newProduct.isActive);
+
+
+            try
+            {
+                DbController.connection.Open();
+                cmd.ExecuteNonQuery();
+                DbController.connection.Close();
+                return true;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
         }
 
-        public List<Product> ObtenerTodos()
+        public static List<Product> getAll()
         {
-            List<Product> list = new List<Product>();   
+            List<Product> list = new List<Product>();
+            string query = "select * from dbo.products where isActive = 1;";
+
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+
+            try
+            {
+                DbController.connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    // Lee los datos de la columna que contiene el array de bytes
+                    byte[] bytes = new byte[(reader.GetBytes(2, 0, null, 0, int.MaxValue))];
+                    reader.GetBytes(2, 0, bytes, 0, bytes.Length);
+
+                    Product product = new Product(reader.GetInt32(0), reader.GetString(1), bytes,
+                        reader.GetString(3), reader.GetInt32(4), reader.GetDecimal(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetBoolean(9));
+                    list.Add(product);
+                    Trace.WriteLine("Prod encontrado, nombre: " + reader.GetString(1));
+
+                }
+                reader.Close();
+                DbController.connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
+
             return list;
         }
     }

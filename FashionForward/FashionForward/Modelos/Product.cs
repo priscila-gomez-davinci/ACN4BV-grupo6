@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,11 @@ namespace FashionForward.Modelos
 {
     public class Product
     {
-        public Product(int id, string name, 
-            string image,string descripcion, int stock, 
-            double price, string color, Sizes size, 
-            CategoriesList categories, Boolean isActive ) 
-        { 
+        public Product(int id, string name,
+            byte[] image, string descripcion, int stock,
+            decimal price, string color, string size,
+            string category, Boolean isActive)
+        {
             this.id = id;
             this.name = name;
             this.image = image;
@@ -21,23 +22,35 @@ namespace FashionForward.Modelos
             this.price = price;
             this.color = color;
             this.size = size;
-            this.categories = categories;
+            this.category = category;
             this.isActive = isActive;
 
         }
+
+        public Product(int id)
+        {
+            this.id = id;
+        }
         public Product()
-        { 
+        {
 
         }
 
         public enum Sizes
         {
+            [Description("XS")]
             XS,
+            [Description("S")]
             S,
+            [Description("M")]
             M,
+            [Description("L")]
             L,
+            [Description("XL")]
             XL,
+            [Description("XXL")]
             XXL,
+            [Description("XXXL")]
             XXXL
         }
 
@@ -51,14 +64,13 @@ namespace FashionForward.Modelos
 
         public int id { get; set; }
         public string name { get; set; }
-        public string image { get; set; }
+        public byte[] image { get; set; }
         public string description { get; set; }
         public int stock { get; set; }
-        public double price { get; set; }
+        public decimal price { get; set; }
         public string color { get; set; }
-        public Sizes size { get; set; }
-        public CategoriesList categories { get; set; }
-        public List<CategoriesList> Categorias { get; set; }
+        public string size { get; set; }
+        public string category { get; set; }
         public Boolean isActive { get; set; }
 
 
