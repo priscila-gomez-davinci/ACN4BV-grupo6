@@ -152,5 +152,17 @@ namespace FashionForward
             }
             
         }
+
+        private void dg_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
+                ProductController.deleteProduct(id);
+                showProducts();
+            }
+        }
     }
 }

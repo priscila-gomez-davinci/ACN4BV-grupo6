@@ -200,6 +200,7 @@
             this.dg_products.Name = "dg_products";
             this.dg_products.Size = new System.Drawing.Size(939, 150);
             this.dg_products.TabIndex = 39;
+            this.dg_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_products_CellContentClick);
             // 
             // id
             // 
@@ -410,9 +411,9 @@
             // panelVentas
             // 
             this.panelVentas.Enabled = false;
-            this.panelVentas.Location = new System.Drawing.Point(0, 327);
+            this.panelVentas.Location = new System.Drawing.Point(0, 38);
             this.panelVentas.Name = "panelVentas";
-            this.panelVentas.Size = new System.Drawing.Size(98, 129);
+            this.panelVentas.Size = new System.Drawing.Size(942, 418);
             this.panelVentas.TabIndex = 37;
             this.panelVentas.Visible = false;
             // 
