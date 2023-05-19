@@ -19,3 +19,9 @@ FashionForward/.vs/FashionForward/v17/.suo
 *.cache
 *.txt
 *.cache
+*.lock
+.vs/ACN4BV-grupo6/v17/.wsuo
+*.json
+*.json
+*.cache
+FashionForward/FashionForward/obj/Debug/FashionForward.csproj.GenerateResource.cache

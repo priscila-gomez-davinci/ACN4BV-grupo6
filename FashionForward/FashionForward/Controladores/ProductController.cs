@@ -78,12 +78,12 @@ namespace FashionForward.Controladores
             }
         }
 
-        public bool EditarProducto(Product newProduct, int productId)
+        public static bool editarProducto(Product newProduct, int productId)
         {
 
             string query = "update dbo.productos set name = @name, image = @image, description = @description, stock = @stock, price = @price, color = @color, size = @size, category = @category, isActive = @isActive where id = @id;";
             SqlCommand cmd = new SqlCommand(query, DbController.connection);
-            cmd.Parameters.AddWithValue("@id", newProduct.id);
+            cmd.Parameters.AddWithValue("@id", productId);
             cmd.Parameters.AddWithValue("@name", newProduct.name);
             cmd.Parameters.AddWithValue("@image", newProduct.image);
             cmd.Parameters.AddWithValue("@description", newProduct.description);
@@ -144,6 +144,43 @@ namespace FashionForward.Controladores
             }
 
             return list;
+        }
+
+
+        public static Product getOneProduct(int id)
+        {
+            Product product = null;
+            string query = "select * from dbo.productos where id =  @id";
+            SqlCommand cmd = new SqlCommand(query, DbController.connection);
+            cmd.Parameters.AddWithValue("@id", id);
+
+
+            try
+            {
+                DbController.connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    // Lee los datos de la columna que contiene el array de bytes
+                    byte[] bytes = new byte[(reader.GetBytes(2, 0, null, 0, int.MaxValue))];
+                    reader.GetBytes(2, 0, bytes, 0, bytes.Length);
+
+                    product = new Product(reader.GetInt32(0), reader.GetString(1), bytes,
+                        reader.GetString(3), reader.GetInt32(4), reader.GetDecimal(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetBoolean(9));
+                    Trace.WriteLine("Prod encontrado, nombre: " + reader.GetString(1));
+
+                }
+                reader.Close();
+                DbController.connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
+
+            return product;
         }
     }
 }

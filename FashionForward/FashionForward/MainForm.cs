@@ -88,6 +88,8 @@ namespace FashionForward
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            btn_editar.Visible = false;
             cb_talle.Items.Add("XS");
             cb_talle.Items.Add("S");
             cb_talle.Items.Add("M");
@@ -155,13 +157,65 @@ namespace FashionForward
 
         private void dg_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Product productoOriginal = null;
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
-                int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
-                ProductController.deleteProduct(id);
+                if (e.ColumnIndex == 7)
+                {
+                    int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    ProductController.deleteProduct(id);
+                    showProducts();
+                }
+
+                // Botón 2: Verificar si se hizo clic en el botón 2 (asumiendo que es la columna 2)
+                if (e.ColumnIndex == 8)
+                {
+                    btn_editar.Visible = true;
+                    btn_agregar.Visible = false;
+
+                    int id = int.Parse(dg_products.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+
+                    productoOriginal = ProductController.getOneProduct(id);
+
+                    txt_id.Text = productoOriginal.id.ToString();
+                    txt_nombre.Text = productoOriginal.name.ToString();
+                    txt_descripcion.Text = productoOriginal.description.ToString();
+                    txt_stock.Text = productoOriginal.stock.ToString();
+                    txt_color.Text = productoOriginal.color.ToString();
+                    txt_precio.Text = productoOriginal.price.ToString();
+                }
+            }   
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            byte[] imageBytes;
+            using (var stream = new MemoryStream())
+            {
+                pb_imagen.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                imageBytes = stream.ToArray();
+            }
+
+            var talle = cb_talle.SelectedItem;
+            var categoria = cb_categoria.SelectedItem;
+
+            Product prod = new Product(int.Parse(txt_id.Text), txt_nombre.Text, imageBytes, txt_descripcion.Text, int.Parse(txt_stock.Text), decimal.Parse(txt_id.Text), txt_color.Text, talle.ToString(), categoria.ToString(), true);
+
+            if (ProductController.editarProducto(prod, int.Parse(txt_id.Text)))
+            {
+                Trace.WriteLine("Producto Creado con exito");
                 showProducts();
+                btn_editar.Visible = false;
+                btn_agregar.Visible = true;
+            }
+            else
+            {
+                Trace.WriteLine("Fallo la creacion del producto");
+                btn_editar.Visible = false;
+                btn_agregar.Visible = true;
             }
         }
     }

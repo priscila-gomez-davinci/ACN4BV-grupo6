@@ -66,6 +66,7 @@
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelVentas = new System.Windows.Forms.Panel();
+            this.btn_editar = new System.Windows.Forms.Button();
             this.panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.panelProductos.SuspendLayout();
@@ -158,6 +159,7 @@
             // 
             // panelProductos
             // 
+            this.panelProductos.Controls.Add(this.btn_editar);
             this.panelProductos.Controls.Add(this.dg_products);
             this.panelProductos.Controls.Add(this.txt_id);
             this.panelProductos.Controls.Add(this.label9);
@@ -411,11 +413,21 @@
             // panelVentas
             // 
             this.panelVentas.Enabled = false;
-            this.panelVentas.Location = new System.Drawing.Point(0, 38);
+            this.panelVentas.Location = new System.Drawing.Point(0, 41);
             this.panelVentas.Name = "panelVentas";
-            this.panelVentas.Size = new System.Drawing.Size(942, 418);
+            this.panelVentas.Size = new System.Drawing.Size(942, 415);
             this.panelVentas.TabIndex = 37;
             this.panelVentas.Visible = false;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(301, 183);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(131, 29);
+            this.btn_editar.TabIndex = 40;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // MainForm
             // 
@@ -479,6 +491,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewButtonColumn Acciones;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.Button btn_editar;
     }
 }
 
