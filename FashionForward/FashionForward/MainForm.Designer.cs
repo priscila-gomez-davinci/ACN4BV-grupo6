@@ -36,6 +36,16 @@
             this.labelUsername = new System.Windows.Forms.Label();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.panelProductos = new System.Windows.Forms.Panel();
+            this.dg_products = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
@@ -56,21 +66,11 @@
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelVentas = new System.Windows.Forms.Panel();
-            this.dg_products = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Talle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acciones = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.panelProductos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_products)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNavbar
@@ -183,6 +183,71 @@
             this.panelProductos.Size = new System.Drawing.Size(942, 418);
             this.panelProductos.TabIndex = 5;
             // 
+            // dg_products
+            // 
+            this.dg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Nombre,
+            this.Stock,
+            this.Precio,
+            this.Color,
+            this.Talle,
+            this.Categoria,
+            this.Acciones,
+            this.Editar});
+            this.dg_products.Location = new System.Drawing.Point(3, 234);
+            this.dg_products.Name = "dg_products";
+            this.dg_products.Size = new System.Drawing.Size(939, 150);
+            this.dg_products.TabIndex = 39;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Color
+            // 
+            this.Color.HeaderText = "Color";
+            this.Color.Name = "Color";
+            // 
+            // Talle
+            // 
+            this.Talle.HeaderText = "Talle";
+            this.Talle.Name = "Talle";
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Acciones
+            // 
+            this.Acciones.HeaderText = "Eliminar";
+            this.Acciones.Name = "Acciones";
+            this.Acciones.Text = "Eliminar";
+            // 
+            // Editar
+            // 
+            this.Editar.DataPropertyName = "Editar";
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
             // txt_id
             // 
             this.txt_id.Location = new System.Drawing.Point(150, 21);
@@ -207,7 +272,7 @@
             this.btn_agregar.TabIndex = 36;
             this.btn_agregar.Text = "Agregar producto";
             this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.button2_Click_1);
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // txt_color
             // 
@@ -345,76 +410,11 @@
             // panelVentas
             // 
             this.panelVentas.Enabled = false;
-            this.panelVentas.Location = new System.Drawing.Point(0, 38);
+            this.panelVentas.Location = new System.Drawing.Point(0, 327);
             this.panelVentas.Name = "panelVentas";
-            this.panelVentas.Size = new System.Drawing.Size(942, 418);
+            this.panelVentas.Size = new System.Drawing.Size(98, 129);
             this.panelVentas.TabIndex = 37;
             this.panelVentas.Visible = false;
-            // 
-            // dg_products
-            // 
-            this.dg_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_products.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.Nombre,
-            this.Stock,
-            this.Precio,
-            this.Color,
-            this.Talle,
-            this.Categoria,
-            this.Acciones,
-            this.Editar});
-            this.dg_products.Location = new System.Drawing.Point(3, 234);
-            this.dg_products.Name = "dg_products";
-            this.dg_products.Size = new System.Drawing.Size(939, 150);
-            this.dg_products.TabIndex = 39;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Color
-            // 
-            this.Color.HeaderText = "Color";
-            this.Color.Name = "Color";
-            // 
-            // Talle
-            // 
-            this.Talle.HeaderText = "Talle";
-            this.Talle.Name = "Talle";
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Acciones
-            // 
-            this.Acciones.HeaderText = "Eliminar";
-            this.Acciones.Name = "Acciones";
-            this.Acciones.Text = "Eliminar";
-            // 
-            // Editar
-            // 
-            this.Editar.DataPropertyName = "Editar";
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
             // 
             // MainForm
             // 
@@ -433,8 +433,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.panelProductos.ResumeLayout(false);
             this.panelProductos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_products)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_imagen)).EndInit();
             this.ResumeLayout(false);
 
         }

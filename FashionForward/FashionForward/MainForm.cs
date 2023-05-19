@@ -100,8 +100,9 @@ namespace FashionForward
             cb_categoria.Items.Add("Man");
             cb_categoria.Items.Add("Kids");
             cb_categoria.Items.Add("Teenager");
-        }
 
+        }
+  
         private void showProducts()
         {
 
@@ -125,7 +126,8 @@ namespace FashionForward
             }
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+
+        private void btn_agregar_Click(object sender, EventArgs e)
         {
             byte[] imageBytes;
             using (var stream = new MemoryStream())
@@ -148,6 +150,7 @@ namespace FashionForward
             {
                 Trace.WriteLine("Fallo la creacion del producto");
             }
+            
         }
     }
 }

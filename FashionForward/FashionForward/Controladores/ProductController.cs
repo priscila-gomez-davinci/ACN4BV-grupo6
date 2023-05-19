@@ -17,7 +17,7 @@ namespace FashionForward.Controladores
         public bool crearProducto(Product product)
         {
             //Dar de alta en la base de datos el producto
-            String query = "insert into dbo.products values" +
+            String query = "insert into dbo.productos values" +
                "(@id, " +
                "@name, " +
                "@image, " +
@@ -60,7 +60,7 @@ namespace FashionForward.Controladores
 
         public static bool deleteProduct(int productid)
         {
-            string query = "update dbo.products set isActive = 0 where id = @id;";
+            string query = "update dbo.productos set isActive = 0 where id = @id;";
 
             SqlCommand cmd = new SqlCommand(query, DbController.connection);
             cmd.Parameters.AddWithValue("@id", productid);
@@ -81,7 +81,7 @@ namespace FashionForward.Controladores
         public bool EditarProducto(Product newProduct, int productId)
         {
 
-            string query = "update dbo.products set name = @name, image = @image, description = @description, stock = @stock, price = @price, color = @color, size = @size, category = @category, isActive = @isActive where id = @id;";
+            string query = "update dbo.productos set name = @name, image = @image, description = @description, stock = @stock, price = @price, color = @color, size = @size, category = @category, isActive = @isActive where id = @id;";
             SqlCommand cmd = new SqlCommand(query, DbController.connection);
             cmd.Parameters.AddWithValue("@id", newProduct.id);
             cmd.Parameters.AddWithValue("@name", newProduct.name);
@@ -113,7 +113,7 @@ namespace FashionForward.Controladores
         public static List<Product> getAll()
         {
             List<Product> list = new List<Product>();
-            string query = "select * from dbo.products where isActive = 1;";
+            string query = "select * from dbo.productos where isActive = 1;";
 
             SqlCommand cmd = new SqlCommand(query, DbController.connection);
 
